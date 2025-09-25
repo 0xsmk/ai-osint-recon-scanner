@@ -1,35 +1,35 @@
 
 #  AI-OSINT Recon Scanner
 
-**AI-OSINT Recon Scanner** — это интеллектуальный сканер уязвимостей, который использует OSINT-фингерпринтинг и AI-анализ для выбора релевантных проверок безопасности.  
-В отличие от классических сканеров, он не просто прогоняет базу CVE, а динамически подбирает тесты под стек конкретного сайта.
+**AI-OSINT Recon Scanner** is an intelligent vulnerability scanner that uses OSINT fingerprinting and AI analysis to select relevant security checks.  
+Unlike classic scanners, it does not just run through a CVE database, but dynamically adapts tests to the specific technology stack of the target site.
 
 ---
 
-##  Возможности
-- Сбор информации о цели (HTML, заголовки, favicon, title).
-- AI-анализ собранных данных → рекомендации, какие уязвимости проверить.
-- Поддержка базовых тестов: SQLi, XSS, слабые заголовки.
-- CLI-интерфейс для запуска в терминале.
+##  Features
+- Collect target information (HTML, headers, favicon, title).
+- AI-based analysis of collected data → recommendations for security checks.
+- Basic vulnerability tests: SQLi, XSS, weak security headers.
+- CLI interface for running in the terminal.
 
 ---
 
-##  Структура проекта
+##  Project Structure
 ```
 
 ai-osint-recon-scanner/
-│── cli/            # точка входа (CLI)
-│── recon/          # сбор данных (collector, parser)
-│── ai/             # анализ и генерация отчётов
-│── scanner/        # проверки уязвимостей
-│── utils/          # вспомогательные модули
-│── webui/          # (опционально) веб-интерфейс
+│── cli/            # command-line interface entry point
+│── recon/          # data collection (collector, parser)
+│── ai/             # AI-based analysis and reporting
+│── scanner/        # vulnerability tests
+│── utils/          # helper utilities
+│── webui/          # (optional) web interface
 
 ````
 
 ---
 
-##  Установка
+##  Installation
 ```bash
 git clone https://github.com/<your-username>/ai-osint-recon-scanner.git
 cd ai-osint-recon-scanner
@@ -38,15 +38,15 @@ pip install -r requirements.txt
 
 ---
 
-## ▶ Запуск
+##  Usage
 
-Пример:
+Example:
 
 ```bash
 python -m cli.main --url https://example.com
 ```
 
-Результат (JSON):
+Output (JSON):
 
 ```json
 {
@@ -58,7 +58,7 @@ python -m cli.main --url https://example.com
 }
 ```
 
-AI-анализ:
+AI analysis:
 
 ```
 [AI Analyzer] Recommended tests:
@@ -68,18 +68,19 @@ AI-анализ:
 
 ---
 
-##  План развития
+##  Roadmap
 
-* [x] CLI и сбор данных
-* [ ] Базовый AI-анализ (if-логика)
-* [ ] Добавить первые тесты (SQLi, XSS, headers)
-* [ ] Интеграция open-source LLM (Mistral 7B)
-* [ ] Дообучение модели на CVE/Wappalyzer dataset
-* [ ] Web-интерфейс для отчётов
+* [x] CLI and data collection
+* [ ] Basic AI analysis (if-logic)
+* [ ] Add first tests (SQLi, XSS, headers)
+* [ ] Integrate open-source LLM (Mistral 7B)
+* [ ] Fine-tune model on CVE/Wappalyzer dataset
+* [ ] Web interface for reports
 
 ---
 
 ##  Disclaimer
 
-Этот проект создан в образовательных целях. Автор не несёт ответственности за использование инструмента против систем без разрешения.
+This project is created for educational purposes only.
+The author is not responsible for any misuse of the tool against systems without explicit permission.
 
